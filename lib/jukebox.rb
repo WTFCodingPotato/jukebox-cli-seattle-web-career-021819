@@ -26,10 +26,12 @@ end
 
 def play(songs_array)
   puts "Please enter a song name or number:"
-  response = gets.chomp.to_i
-  if response > 0 && response < songs_array.length
-    puts "Playing #{songs_array[response - 1]}"
-  else
-    puts "Invalid input, please try again"
+  response = gets.chomp
+  songs_array.each do |string|
+    if string.include?(response)
+      puts "Playing #{string}"
+    else
+      puts "Invalid input, please try again"
+    end
   end
 end
