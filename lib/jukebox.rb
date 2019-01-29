@@ -40,11 +40,24 @@ def exit_jukebox
   puts "Goodbye"
 end
 
-def run
+def run(songs_array)
   help
   puts "Please enter a command:"
   response = gets.chomp
-  while !response == "exit" do
-
+  until response == "exit"
+    if response == "help"
+      help
+      puts "Please enter a command:"
+      response = gets.chomp
+    elsif response == "list"
+      list
+      puts "Please enter a command:"
+      response = gets.chomp
+    else response == "play"
+      play
+      puts "Please enter a command:"
+      response = gets.chomp
+    end
   end
+  exit_jukebox
 end
