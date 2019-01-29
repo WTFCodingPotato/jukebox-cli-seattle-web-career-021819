@@ -17,3 +17,11 @@ def help
   puts "- play : lets you choose a song to play"
   puts "- exit : exits this program"
 end
+
+def list(songs_array)
+  list_num = 0
+  songs_array.each do |element|
+    list_num += 1
+    puts "#{list_num}. #{element}"
+  end
+end
