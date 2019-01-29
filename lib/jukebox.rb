@@ -23,3 +23,13 @@ def list(songs_array)
     puts "#{index + 1}. #{element}"
   end
 end
+
+def play(songs_array)
+  puts "Please enter a song name or number:"
+  response = gets.chomp
+  if response > 0 && response < songs_array.length
+    puts "Playing #{songs_array[response - 1]}"
+  else
+    puts "Invalid input, please try again"
+  end
+end
